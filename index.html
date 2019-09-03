@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+<div class="index">
+    <input type="file" accept="video/*" id="video" name="video" onchange="uploadVideo()">
+ 
+</div>	
+<script>
+    function uploadVideo(e) {
+          var that = this;
+            var video = event.target.files[0];  //选择的文件
+            var reader = new FileReader();  
+            var rs = reader.readAsDataURL(video);  
+            reader.onload = (e) =>{
+              var videoSrc= e.target.result; 
+              console.log(videoSrc)
+              //提交到后台部分略
+            }       
+        }
+</script>
+</body>
+</html>
